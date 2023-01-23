@@ -11,7 +11,7 @@ const form = useForm({
     email: '',
     phone: '',
     identification: '',
-    gender: '',
+    gender: 'male',
     password: '',
     password_confirmation: '',
     terms: false,
@@ -43,6 +43,7 @@ const submit = () => {
                         required
                         autofocus
                         autocomplete="name"
+                        placeholder="Name on your ID"
                     />
 
                     <InputError class="mt-2" :message="form.errors.name" />
@@ -58,6 +59,7 @@ const submit = () => {
                         v-model="form.email"
                         required
                         autocomplete="email"
+                        placeholder="Your email address"
                     />
 
                     <InputError class="mt-2" :message="form.errors.email" />
@@ -73,6 +75,7 @@ const submit = () => {
                         v-model="form.identification"
                         required
                         autocomplete="identification"
+                        placeholder="ID Number"
                     />
 
                     <InputError class="mt-2" :message="form.errors.identification" />
@@ -87,6 +90,7 @@ const submit = () => {
                         v-model="form.phone"
                         required
                         autocomplete="phone"
+                        placeholder="WhatsApp Phone Number"
                     />
 
                     <InputError class="mt-2" :message="form.errors.phone" />
@@ -95,15 +99,10 @@ const submit = () => {
 
                 <div class="mt-2">
                     <InputLabel for="gender" value="Gender" />
-
-                    <TextInput
-                        id="gender"
-                        type="text"
-                        class="mt-1 block w-full"
-                        v-model="form.gender"
-                        required
-                        autocomplete="gender"
-                    />
+                    <select v-model="form.gender" class="w-full text-gray-600 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
 
                     <InputError class="mt-2" :message="form.errors.gender" />
                 </div>    
