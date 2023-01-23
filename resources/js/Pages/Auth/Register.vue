@@ -9,6 +9,9 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 const form = useForm({
     name: '',
     email: '',
+    phone: '',
+    identification: '',
+    gender: '',
     password: '',
     password_confirmation: '',
     terms: false,
@@ -26,7 +29,7 @@ const submit = () => {
         <Head title="Register" />
 
         <div class="space-y-3">
-            <h1>Member Registration</h1>
+            <h1 class="text-lg tracking-wide font-semibold">Member Registration</h1>
 
             <form @submit.prevent="submit">
                 <div>
@@ -45,7 +48,7 @@ const submit = () => {
                     <InputError class="mt-2" :message="form.errors.name" />
                 </div>
 
-                <div class="mt-4">
+                <div class="mt-2">
                     <InputLabel for="email" value="Email" />
 
                     <TextInput
@@ -54,13 +57,58 @@ const submit = () => {
                         class="mt-1 block w-full"
                         v-model="form.email"
                         required
-                        autocomplete="username"
+                        autocomplete="email"
                     />
 
                     <InputError class="mt-2" :message="form.errors.email" />
                 </div>
 
-                <div class="mt-4">
+                <div class="mt-2">
+                    <InputLabel for="identification" value="Identification" />
+
+                    <TextInput
+                        id="identification"
+                        type="text"
+                        class="mt-1 block w-full"
+                        v-model="form.identification"
+                        required
+                        autocomplete="identification"
+                    />
+
+                    <InputError class="mt-2" :message="form.errors.identification" />
+                </div>   
+                <div class="mt-2">
+                    <InputLabel for="phone" value="Phone" />
+
+                    <TextInput
+                        id="phone"
+                        type="text"
+                        class="mt-1 block w-full"
+                        v-model="form.phone"
+                        required
+                        autocomplete="phone"
+                    />
+
+                    <InputError class="mt-2" :message="form.errors.phone" />
+                </div>  
+
+
+                <div class="mt-2">
+                    <InputLabel for="gender" value="Gender" />
+
+                    <TextInput
+                        id="gender"
+                        type="text"
+                        class="mt-1 block w-full"
+                        v-model="form.gender"
+                        required
+                        autocomplete="gender"
+                    />
+
+                    <InputError class="mt-2" :message="form.errors.gender" />
+                </div>    
+
+                <div class="mt-2">
                     <InputLabel for="password" value="Password" />
 
                     <TextInput
@@ -75,7 +123,7 @@ const submit = () => {
                     <InputError class="mt-2" :message="form.errors.password" />
                 </div>
 
-                <div class="mt-4">
+                <div class="mt-2">
                     <InputLabel for="password_confirmation" value="Confirm Password" />
 
                     <TextInput
@@ -90,7 +138,7 @@ const submit = () => {
                     <InputError class="mt-2" :message="form.errors.password_confirmation" />
                 </div>
 
-                <div class="flex items-center justify-end mt-4">
+                <div class="flex items-center justify-end mt-2">
                     <Link
                         :href="route('login')"
                         class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
