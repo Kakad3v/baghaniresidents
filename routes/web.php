@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\HouseholdMemberController;
+use App\Http\Controllers\Admin\HouseholdMemberStoreController;
 use App\Http\Controllers\Admin\MembersController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -23,6 +25,8 @@ Route::get('/', function () {
 
 Route::middleware('auth')->prefix('members')->group(function () {
     Route::get('/', MembersController::class)->name('members.index');
+    Route::get('/{user:identification}/add-household-member', HouseholdMemberController::class)->name('household.members.add');
+    Route::post('/{user:identification}/add-household-member', HouseholdMemberStoreController::class)->name('household.members.store');
 
     Route::get('dashboard', function () {
         return Inertia::render('Dashboard');

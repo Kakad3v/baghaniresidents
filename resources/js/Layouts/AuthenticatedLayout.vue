@@ -11,7 +11,7 @@
 
 <template>
     <div>
-        <div class="min-h-screen bg-white  ">
+        <div class="min-h-screen ">
             <nav class="border-b bg-gray-100 border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

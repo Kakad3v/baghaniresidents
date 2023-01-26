@@ -1,6 +1,6 @@
 <script setup>
     import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-    import { Head } from '@inertiajs/vue3';
+    import { Head, Link } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -11,8 +11,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="">
                     <div class="px-4 sm:px-0 text-gray-900 space-y-3">
-                        <p>This website/app is still in it's early stages</p>
-                        <!-- <p>Expect a lot of changes as we continue to build it.</p> -->
+                       <Link :href="route('household.members.add', $page.props.auth.user)">Add Household Member</Link>
                     </div>
                 </div>
             </div>
