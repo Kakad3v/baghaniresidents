@@ -3,7 +3,8 @@
     import { Head } from '@inertiajs/vue3';
 
     defineProps({
-        members: Array
+        members: Array,
+        total:String
     })
 </script>
 
@@ -14,7 +15,7 @@
         <div class="py-6">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="px-4 sm:px-0">
-                    <p>There are currently {{ members.length }} members registered.</p>
+                    <p>There are currently {{ total }} members registered.</p>
                 </div>
             </div>
         </div>
